@@ -11,10 +11,10 @@ function parseNote (html) {
 	const date = new Date($('.heading').text());
 
 	var $content = $('.content');
+	var $listitems = $content.children('.listitem');
 	let entries;
-	if (/class="listitem/.test($content.html())) { // HACK
-		entries = $content
-			.children('.listitem')
+	if ($listitems.length > 0) {
+		entries = $listitems
 			.toArray()
 			.map(x => {
 				x = $(x);
