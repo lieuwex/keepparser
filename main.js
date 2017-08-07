@@ -38,6 +38,7 @@ function parseNote (html) {
 		title,
 		date,
 		entries,
+		labels: $('.label').toArray().map(x => $(x).text()),
 		content: $('.content').html(),
 	};
 }
